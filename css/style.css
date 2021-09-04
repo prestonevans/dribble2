@@ -121,10 +121,34 @@ i {
 	animation-name: google;
 	animation-duration: .4s;
 	animation-fill-mode: forwards;
+	animation-direction: alternate;
 	animation-timing-function: linear;
 }
-
+.logo a i {
+	animation-name: googleout;
+	animation-duration: .4s;
+	animation-direction: alternate-reverse;
+	animation-timing-function: linear;
+}
 @keyframes google {
+	0% {
+		transform: scale(1);
+	}
+	25% {
+		color: rgb(66, 133, 244);
+	}
+	50% {
+		color: rgb(219, 68, 55);
+	}
+	75% {
+		color: rgb(15, 157, 88);
+	}
+	to {
+		color: rgb(252, 157, 14);
+		transform: scale(1.8);
+	}
+}
+@keyframes googleout {
 	0% {
 		transform: scale(1);
 	}
