@@ -1,131 +1,72 @@
-html,
-body,
-div,
-span,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-abbr,
-address,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-samp,
-small,
-strong,
-sub,
-sup,
-var,
-b,
-i,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+* {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
 	box-sizing: border-box;
 }
-
 body {
-	line-height: 1;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container {
+	height: 90%;
+	width: 90%;
+	max-width: 1000px;
+	display: grid;
+	grid-template-columns: 100px 1fr 1fr;
+	grid-template-rows: 125px 1fr;
+	gap: 0 1rem;
+}
+.sidebar {
+	grid-row: 1 / -1;
+	border-top-left-radius: 3rem;
+	border-bottom-left-radius: 3rem;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	padding: 2rem;
+}
+.sidebar div {
+	flex: 1;
+}
+.sidebar div:last-child {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.title {
+	grid-column: 2 / -1;
+	border-top-right-radius: 3rem;
+	padding: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.content {
+	grid-column: 2 / 4;
+	overflow: scroll;
+	border-bottom-right-radius: 3rem;
+	display: flex;
+	padding: 4rem 0;
+}
+.left,
+.right {
+	flex-basis: 100%;
+	padding: 0 2rem;
+	display: flex;
+	flex-direction: column;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-	display: block;
+.sidebar {
+	border-right: 1px solid black;
 }
-
-nav ul {
-	list-style: none;
+.title {
+	border-bottom: 1px solid black;
 }
-
-blockquote,
-q {
-	quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-	content: none;
-}
-
-a {
-	margin: 0;
-	padding: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-input,
-select {
-	vertical-align: middle;
+@media screen and (max-width: 700px) {
+	.content {
+		flex-direction: column;
+	}
 }
