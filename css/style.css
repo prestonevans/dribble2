@@ -99,6 +99,49 @@ i {
 	border-bottom: 1px solid black;
 }
 
+/* EFFECTS  */
+
+/* navbar effects */
+.icons i,
+.power i {
+	transition: all .2s ease-in-out;
+}
+
+.icons a:nth-child(odd):hover i {
+	color: rgb(252, 157, 14);
+}
+.icons a:hover i {
+	transform: scale(1.4);
+}
+.power a:hover i {
+	color: rgba(128, 128, 128, 0.644);
+	transform: translateY(5px);
+}
+.logo a:hover i {
+	animation-name: google;
+	animation-duration: .4s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+@keyframes google {
+	0% {
+		transform: scale(1);
+	}
+	25% {
+		color: rgb(66, 133, 244);
+	}
+	50% {
+		color: rgb(219, 68, 55);
+	}
+	75% {
+		color: rgb(15, 157, 88);
+	}
+	to {
+		color: rgb(252, 157, 14);
+		transform: scale(1.8);
+	}
+}
 /* Media queries */
 
 @media screen and (max-width: 700px) {
